@@ -20,7 +20,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+class Pair
+  include Extractable
+
+  def initialize(first, second)
+  end
+end
+
+pair = Pair.new(1, 2)
+
+pair.extract #=> [1, 2]
+
+pair.match do
+  Pair.case(0, 1) do end # mismatch
+  Pair.case(2, _) do end # mismatch
+  Pair.case(1, :x) do # match
+    x # 2
+  end
+end
+```
+
 
 ## Contributing
 
