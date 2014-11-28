@@ -1,5 +1,11 @@
 require "extractable/version"
+Dir["#{File.dirname(__FILE__)}/extractable/*.rb"].each do |path|
+  require "extractable/#{File.basename(path, '.rb')}"
+end
 
 module Extractable
-  # Your code goes here...
+  include Initializer
+
+  def self.prepended klass
+  end
 end
