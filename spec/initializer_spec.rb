@@ -20,6 +20,12 @@ describe Extractable::Initializer do
           a + b + c
         end
       ).to eq 6
+
+      Test.new(1, 2, 3).match do
+        with Test.case(0, 2, 3) do p "wrong" end
+        with Test.case(1, 2, 3) do p "correct" end
+        with Test.case(0, 2, 3) do p "wrong" end
+      end
     end
   end
 end

@@ -33,11 +33,9 @@ pair = Pair.new(1, 2)
 pair.extract #=> [1, 2]
 
 pair.match do
-  Pair.case(0, 1) do end # mismatch
-  Pair.case(2, _) do end # mismatch
-  Pair.case(1, :x) do # match
-    x # 2
-  end
+  with Pair.case(0, 1) do end # mismatch
+  with Pair.case(1, 2) do end # match
+  with Pair.case(2, 1) do end # mismatch
 end
 ```
 

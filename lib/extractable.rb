@@ -7,5 +7,6 @@ module Extractable
   include Initializer
 
   def self.prepended klass
+    klass.extend Case
   end
 end

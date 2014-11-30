@@ -69,7 +69,7 @@ end
 p s.extract
 
 #s.match do
-#  Student.case("hey", :x) do end
-#  Student.case("piyo", truthy) do end
-#  _ do end
+#  when Student.case("hey", :x) do end
+#  when Student.case("piyo", truthy) do end
+#  when _ do end
 #end
