@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ```ruby
 class Pair
-  prepend Extractable
+  include Extractable
 
   def initialize(first, second)
   end

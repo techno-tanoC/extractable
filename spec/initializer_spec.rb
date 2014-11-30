@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 class Test
-  prepend Extractable
+  include Extractable
   def initialize a, b, c
   end
 end

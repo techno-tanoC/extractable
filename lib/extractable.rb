@@ -4,9 +4,9 @@ Dir["#{File.dirname(__FILE__)}/extractable/*.rb"].each do |path|
 end
 
 module Extractable
-  include Initializer
-
-  def self.prepended klass
-    klass.extend Case
+  def self.included klass
+    klass.include Extractable::PatternMatch
+    klass.prepend Extractable::Initializer
+    klass.extend Extractable::Case
   end
 end

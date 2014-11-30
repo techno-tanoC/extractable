@@ -7,7 +7,9 @@ module Extractable::Initializer
     @initializing_args = args
     super
   end
+end
 
+module Extractable::PatternMatch
   def extract
     block_given? ? yield(*@initializing_args) : @initializing_args
   end
@@ -20,7 +22,6 @@ module Extractable::Initializer
       env.instance_eval(&block)
     end
   end
-
 end
 
 module Extractable::Case
